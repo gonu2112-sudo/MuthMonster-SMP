@@ -1,209 +1,414 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>MuthMonster SMP</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#0d1117;
-    color:white;
+
+font-family:Arial,Helvetica,sans-serif;
+background:#0b0f17;
+color:white;
+
 }
 
 nav{
-    position:fixed;
-    width:100%;
-    top:0;
-    background:rgba(13,17,23,.9);
-    backdrop-filter:blur(10px);
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 8%;
-    z-index:1000;
+
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:18px 8%;
+
+background:rgba(0,0,0,.75);
+backdrop-filter:blur(12px);
+
+z-index:1000;
+
 }
 
-nav h2{
-    color:#55ff55;
+.logo{
+
+font-family:'Press Start 2P';
+font-size:18px;
+color:#55ff55;
+text-shadow:0 0 15px #55ff55;
+
 }
 
 nav ul{
-    list-style:none;
-    display:flex;
-    gap:25px;
+
+display:flex;
+gap:28px;
+list-style:none;
+
 }
 
 nav a{
-    color:white;
-    text-decoration:none;
-    transition:.3s;
+
+color:white;
+text-decoration:none;
+font-weight:bold;
+transition:.3s;
+
 }
 
 nav a:hover{
-    color:#55ff55;
+
+color:#55ff55;
+
 }
 
 .hero{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    background:
-    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.7)),
-    url("https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1800&q=80");
-    background-size:cover;
-    background-position:center;
+
+height:100vh;
+
+display:flex;
+flex-direction:column;
+
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+background:
+
+linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.75)),
+
+url("https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=2000&q=80");
+
+background-size:cover;
+background-position:center;
+
 }
 
 .hero h1{
-    font-family:'Press Start 2P', cursive;
-    font-size:48px;
-    color:#55ff55;
-    text-shadow:0 0 20px #55ff55;
-    line-height:1.5;
+
+font-family:'Press Start 2P';
+
+font-size:58px;
+
+line-height:1.5;
+
+color:#55ff55;
+
+text-shadow:
+
+0 0 10px #55ff55,
+0 0 25px #55ff55;
+
 }
 
 .hero p{
-    margin-top:25px;
-    font-size:22px;
-    color:#ddd;
+
+font-size:23px;
+
+margin-top:30px;
+
+color:#ddd;
+
 }
 
 .buttons{
-    margin-top:40px;
+
+margin-top:45px;
+
 }
 
 .btn{
-    display:inline-block;
-    margin:10px;
-    padding:15px 35px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:bold;
-    transition:.3s;
+
+display:inline-block;
+
+padding:16px 38px;
+
+margin:10px;
+
+border-radius:10px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+border:none;
+
+font-size:16px;
+
 }
 
 .play{
-    background:#55ff55;
-    color:black;
+
+background:#55ff55;
+color:black;
+
 }
 
 .discord{
-    background:#5865F2;
-    color:white;
+
+background:#5865F2;
+color:white;
+
 }
 
 .btn:hover{
-    transform:translateY(-5px);
+
+transform:translateY(-6px);
+
 }
 
 section{
-    max-width:1100px;
-    margin:auto;
-    padding:90px 20px;
+
+max-width:1200px;
+
+margin:auto;
+
+padding:90px 20px;
+
 }
 
-.section-title{
-    text-align:center;
-    font-size:40px;
-    margin-bottom:45px;
+.title{
+
+text-align:center;
+
+font-size:42px;
+
+margin-bottom:50px;
+
 }
 
 .cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:25px;
+
+display:grid;
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
 }
 
 .card{
-    background:#161b22;
-    padding:30px;
-    border-radius:12px;
-    text-align:center;
-    transition:.3s;
+
+background:#161b22;
+
+padding:30px;
+
+border-radius:15px;
+
+text-align:center;
+
+transition:.35s;
+
 }
 
 .card:hover{
-    transform:translateY(-8px);
+
+transform:translateY(-10px);
+
+box-shadow:0 0 25px rgba(85,255,85,.25);
+
 }
 
 .card h3{
-    color:#55ff55;
-    margin-bottom:15px;
+
+margin-bottom:18px;
+
+color:#55ff55;
+
 }
 
-.info{
-    background:#161b22;
-    border-radius:12px;
-    padding:35px;
-    text-align:center;
+.serverbox{
+
+background:#161b22;
+
+padding:40px;
+
+border-radius:15px;
+
+text-align:center;
+
+line-height:2;
+
 }
 
-.info h3{
-    color:#55ff55;
-    margin-bottom:20px;
-}
+.copy{
 
-.info p{
-    margin:10px 0;
-    font-size:18px;
+margin-top:20px;
+
 }
 
 .rules{
-    max-width:700px;
-    margin:auto;
-    line-height:2;
-    font-size:18px;
+
+max-width:700px;
+
+margin:auto;
+
+font-size:19px;
+
+line-height:2;
+
 }
 
 footer{
-    text-align:center;
-    padding:30px;
-    background:#090b10;
-    color:#aaa;
+
+padding:35px;
+
+background:#090c12;
+
+text-align:center;
+
+color:#999;
+
+margin-top:80px;
+
 }
 
-@media(max-width:768px){
+/* Discord Popup */
 
-nav{
-    flex-direction:column;
-    gap:15px;
+.modal{
+
+display:none;
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.75);
+
+justify-content:center;
+
+align-items:center;
+
+z-index:9999;
+
 }
 
-nav ul{
-    flex-wrap:wrap;
-    justify-content:center;
+.modal-box{
+
+background:#161b22;
+
+padding:35px;
+
+border-radius:15px;
+
+text-align:center;
+
+width:90%;
+
+max-width:430px;
+
+animation:popup .25s ease;
+
 }
+
+.modal-box h2{
+
+color:#55ff55;
+
+margin-bottom:20px;
+
+}
+
+.modal-box a{
+
+display:inline-block;
+
+margin-top:20px;
+
+}
+
+.close{
+
+font-size:34px;
+
+float:right;
+
+cursor:pointer;
+
+}
+
+@keyframes popup{
+
+from{
+
+transform:scale(.8);
+
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+@media(max-width:800px){
 
 .hero h1{
-    font-size:30px;
+
+font-size:34px;
+
 }
 
 .hero p{
-    font-size:18px;
-}
 
-.section-title{
-    font-size:30px;
-}
+font-size:18px;
 
 }
+
+nav{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+nav ul{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+}
+
 </style>
 
 </head>
@@ -212,56 +417,77 @@ nav ul{
 
 <nav>
 
-<h2>MuthMonster SMP</h2>
+<div class="logo">
+
+MuthMonster SMP
+
+</div>
 
 <ul>
+
 <li><a href="#features">Features</a></li>
+
 <li><a href="#server">Server</a></li>
+
 <li><a href="#rules">Rules</a></li>
+
 </ul>
 
 </nav>
 
 <header class="hero">
 
-<h1>MUTHMONSTER SMP</h1>
+<h1>MUTHMONSTER<br>SMP</h1>
 
-<p>A fun Survival Multiplayer experience for everyone.</p>
+<p>
+
+Survive • Fight • Build • Have Fun
+
+</p>
 
 <div class="buttons">
 
-<a class="btn play" href="#server">Play Now</a>
+<button class="btn play" onclick="copyIP()">
 
-<button class="btn discord" onclick="showDiscord()">Join Discord</button>
+Copy Server IP
+
+</button>
+
+<button class="btn discord"
+
+onclick="openDiscord()">
+
+Join Discord
+
+</button>
 
 </div>
 
 </header>
+    <section id="features">
 
-<section id="features">
-
-<h2 class="section-title">Features</h2>
+<h2 class="title">Why Play MuthMonster SMP?</h2>
 
 <div class="cards">
 
 <div class="card">
 <h3>❤️ Lifesteal</h3>
-<p>Defeat players to steal their hearts and become stronger.</p>
+<p>Steal hearts from defeated players and become stronger.</p>
 </div>
 
 <div class="card">
 <h3>💰 Economy</h3>
-<p>Earn money, trade with others, and build your wealth.</p>
+<p>Trade with other players, earn money and build your fortune.</p>
 </div>
 
 <div class="card">
 <h3>🌍 Survival</h3>
-<p>Explore the world, gather resources, and build anything you imagine.</p>
+<p>Classic survival gameplay with exciting multiplayer adventures.</p>
 </div>
 
 <div class="card">
-<h3>🤝 Friendly Community</h3>
-<p>Play with friends and enjoy a welcoming SMP experience.</p>
+<h3>🤝 Community</h3>
+<p>Join a friendly community, make friends and enjoy the server together.</p>
 </div>
 
 </div>
@@ -270,23 +496,35 @@ nav ul{
 
 <section id="server">
 
-<h2 class="section-title">Server Information</h2>
+<h2 class="title">Server Information</h2>
 
-<div class="info">
+<div class="serverbox">
 
-<h3>Java & Bedrock Supported</h3>
+<h3 style="color:#55ff55;">Java & Bedrock Supported</h3>
 
-<p><strong>Server IP</strong></p>
+<br>
 
-<p>southern-rural.gl.joinmc.link:25565</p>
+<p><b>Server Address</b></p>
 
-<p><strong>Version</strong></p>
+<p id="ip">
+southern-rural.gl.joinmc.link:25565
+</p>
 
-<p>26.1.2</p>
+<button class="btn play copy" onclick="copyIP()">
+📋 Copy IP
+</button>
 
-<p><strong>Status</strong></p>
+<br><br>
 
-<p>🟢 3PM to 11PM IST</p>
+<p><b>Software</b></p>
+
+<p>Paper Build 26.1.2</p>
+
+<br>
+
+<p><b>Availability</b></p>
+
+<p>🟢 Daily • 3:00 PM – 11:00 PM IST</p>
 
 </div>
 
@@ -294,71 +532,129 @@ nav ul{
 
 <section id="rules">
 
-<h2 class="section-title">Server Rules</h2>
+<h2 class="title">Server Rules</h2>
 
 <div class="rules">
 
-<p>1. No hacks or cheats.</p>
-<p>2. Respect all players and staff.</p>
-<p>3. No exploiting glitches or bugs.</p>
-<p>4. Keep chat friendly and appropriate.</p>
-<p>5. Have fun and enjoy the server!</p>
+<p>1️⃣ No hacks or cheats.</p>
+
+<p>2️⃣ Respect every player and staff member.</p>
+
+<p>3️⃣ Don't exploit bugs or glitches.</p>
+
+<p>4️⃣ Keep chat friendly and appropriate.</p>
+
+<p>5️⃣ Most importantly... Have Fun! 🎉</p>
 
 </div>
 
 </section>
-<div id="discordPopup" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#161b22;padding:30px;border-radius:12px;text-align:center;box-shadow:0 0 25px rgba(0,0,0,.7);z-index:9999;">
 
-<h2>Join our Discord!</h2>
+<!-- Discord Popup -->
+
+<div class="modal" id="discordModal">
+
+<div class="modal-box">
+
+<span class="close" onclick="closeDiscord()">&times;</span>
+
+<h2>Join Our Discord</h2>
 
 <p>
-<a href="https://discord.gg/M4kkkkvYD" target="_blank">
-https://discord.gg/M4kkkkvYD
-</a>
+
+Become a part of the MuthMonster SMP community!
+
 </p>
 
 <br>
 
-<button class="btn play" onclick="document.getElementById('discordPopup').style.display='none'">
-Close
-</button>
+<a
+class="btn discord"
+href="https://discord.gg/M4kkkkvYD"
+target="_blank">
 
-</div>
-    <div id="discordPopup" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#161b22;padding:30px;border-radius:12px;text-align:center;box-shadow:0 0 25px rgba(0,0,0,.7);z-index:9999;">
+Open Discord Invite
 
-<h2>Join our Discord!</h2>
-
-<p>
-<a href="https://discord.gg/M4kkkkvYD" target="_blank">
-https://discord.gg/M4kkkkvYD
 </a>
-</p>
 
-<br>
+<br><br>
 
-<button class="btn play" onclick="document.getElementById('discordPopup').style.display='none'">
+<button
+class="btn play"
+onclick="closeDiscord()">
+
 Close
+
 </button>
 
 </div>
+
+</div>
+
 <footer>
 
-<p>© 2026 MuthMonster SMP</p>
-<p>Built with ❤️ by the MuthMonster Team.</p>
+<h2 style="color:#55ff55;">
+
+MuthMonster SMP
+
+</h2>
+
+<br>
+
+<p>
+
+Built with ❤️ for the MuthMonster Community
+
+</p>
+
+<br>
+
+<p>
+
+© 2026 MuthMonster SMP
+
+</p>
 
 </footer>
-<script>
-function showDiscord() {
-    const invite = "https://discord.gg/M4kkkkvYD";
 
-    if (confirm(
-        "Discord Server\n\n" +
-        invite +
-        "\n\nClick OK to open the invite."
-    )) {
-        window.open(invite, "_blank");
-    }
+<script>
+
+function copyIP(){
+
+navigator.clipboard.writeText(
+"southern-rural.gl.joinmc.link:25565"
+);
+
+alert("Server IP copied!");
+
 }
+
+function openDiscord(){
+
+document.getElementById("discordModal").style.display="flex";
+
+}
+
+function closeDiscord(){
+
+document.getElementById("discordModal").style.display="none";
+
+}
+
+window.onclick=function(event){
+
+const modal=document.getElementById("discordModal");
+
+if(event.target==modal){
+
+modal.style.display="none";
+
+}
+
+}
+
 </script>
+
 </body>
+
 </html>
